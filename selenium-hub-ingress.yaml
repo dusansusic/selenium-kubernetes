@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: selenium-hub-ingress
+spec:
+  rules:
+    - host: local.domain.com
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: selenium-hub
+              servicePort: 4444
