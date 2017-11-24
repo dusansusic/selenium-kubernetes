@@ -1,0 +1,24 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: selenium-node-firefox
+  labels:
+    app: selenium-node-firefox
+    role: node
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: selenium-node-firefox
+        role: node
+        kind: firefox
+    spec:
+      containers:
+      - name: selenium-node-firefox
+        image: selenium/node-firefox:3.7.1
+        env:
+          - name: HUB_PORT_4444_TCP_ADDR
+            value: "selenium-hub"
+          - name: HUB_PORT_4444_TCP_PORT
+            value: "4444"

@@ -11,12 +11,12 @@ spec:
     targetPort: 4444
     name: http
   selector:
-    app: selenium-hub
+    app: selenium-hubs
     role: hub
   sessionAffinity: None
   type: LoadBalancer
 status:
   loadBalancer:
     ingress:
-      - ip: 192.168.56.100
       - ip: 192.168.56.101
+      - ip: 192.168.56.102
