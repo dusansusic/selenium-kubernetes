@@ -3,8 +3,7 @@
 ## Selenium Hub Service
 
 Creating Selenium hub service can be done with command `kubectl create -f selenium-hub-service.yaml`.
-Service is defined as LoadBalancer so you can access Selenium Console directly over the port 4444.
-Change your IPs with actual IP addresses.
+go to Ingresses and see the endpoint for Selenium console.
 
 ## Ingress
 
