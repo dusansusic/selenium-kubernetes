@@ -11,7 +11,7 @@ spec:
     targetPort: 4444
     name: http
   selector:
-    app: selenium-hubs
+    app: selenium-hub
     role: hub
   sessionAffinity: None
   type: LoadBalancer
