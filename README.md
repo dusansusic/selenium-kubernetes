@@ -7,7 +7,7 @@ go to Ingresses and see the endpoint for Selenium console.
 
 ## Ingress
 
-Create ingress rules `kubectl create -f selenium-hub-ingress.yaml`. Change your host domain!
+Create ingress rules `kubectl create -f selenium-hub-ingress.yaml`.
 
 ## Selenium Hub Deployment
 
