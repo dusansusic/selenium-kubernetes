@@ -1,6 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
+  namespace: selenium
   name: selenium-hub
 spec:
   backend:

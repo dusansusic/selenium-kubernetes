@@ -1,12 +1,13 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
+  namespace: selenium
   name: selenium-node-chrome
   labels:
     app: selenium-node-chrome
     role: node
 spec:
-  replicas: 2
+  replicas: 5
   template:
     metadata:
       labels:
@@ -22,3 +23,13 @@ spec:
             value: "selenium-hub"
           - name: HUB_PORT_4444_TCP_PORT
             value: "4444"
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: compute
+                operator: In
+                values:
+                - "true"
+            topologyKey: "kubernetes.io/hostname"

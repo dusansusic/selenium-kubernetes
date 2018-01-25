@@ -1,6 +1,7 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
+  namespace: selenium
   name: selenium-hub
   labels:
     app: selenium-hub
@@ -20,3 +21,13 @@ spec:
         ports:
           - containerPort: 4444
             name: http
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: compute
+                operator: In
+                values:
+                - "true"
+            topologyKey: "kubernetes.io/hostname"

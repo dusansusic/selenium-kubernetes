@@ -1,29 +1,41 @@
 # Documentation
 
-## Selenium Hub Service
+## Selenium Namespace
+First, create namespace for Selenium:
+```
+kubectl create -f selenium-namespace.yaml
+```
 
+## Selenium Hub Service
 Creating Selenium hub service can be done with command:
 
-`kubectl create -f selenium-hub-service.yaml`.
-go to Ingresses and see the endpoint for Selenium console.
+```
+kubectl create -f selenium-hub-service.yaml
+```
 
 ## Ingress
 
 Create ingress rule:
 
-`kubectl create -f selenium-hub-ingress.yaml`.
+```
+kubectl create -f selenium-hub-ingress.yaml
+```
 
 ## Selenium Hub Deployment
 
 Deploy Selenium Hub with executing:
 
-`kubectl create -f selenium-hub-deployment.yaml`.
+```
+kubectl create -f selenium-hub-deployment.yaml
+```
 
 ## Selenium Node Chrome Deployment
 
 Deploy Selenium Node Chrome with executing:
 
-`kubectl create -f selenium-node-chrome-deployment.yaml`.
+```
+kubectl create -f selenium-node-chrome-deployment.yaml
+```
 
 Change number of replicas if you need more nodes.
 
@@ -31,7 +43,9 @@ Change number of replicas if you need more nodes.
 
 Deploy Selenium Node Chrome with executing:
 
-`kubectl create -f selenium-node-firefox-deployment.yaml`.
+```
+kubectl create -f selenium-node-firefox-deployment.yaml
+```
 
 Change number of replicas if you need more nodes.
 
